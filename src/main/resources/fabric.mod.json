@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "ibfixed",
-  "version": "${version}",
+  "version": "1.0.0",
   "name": "It's Been Fixed",
   "description": "A mod that does some simple fixes for weird mechanics in Minecraft",
   "authors": [
