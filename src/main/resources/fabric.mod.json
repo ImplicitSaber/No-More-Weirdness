@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "ibfixed",
+  "version": "${version}",
+  "name": "It's Been Fixed",
+  "description": "A mod that does some simple fixes for weird mechanics in Minecraft",
+  "authors": [
+    "Red050911"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/ibfixed/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.red050911.mod.itsbeenfixed.ItsBeenFixed"
+    ]
+  },
+  "mixins": [
+    "ibfixed.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
