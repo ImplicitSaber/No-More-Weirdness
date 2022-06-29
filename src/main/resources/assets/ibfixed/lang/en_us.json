@@ -3,5 +3,8 @@
 
   "gamerule.cactiBreakItems": "Should cacti break items",
   "gamerule.cactiBreakMinecarts": "Should cacti break minecarts",
-  "gamerule.cactiBreakBoats": "Should cacti break boats"
+  "gamerule.cactiBreakBoats": "Should cacti break boats",
+  "gamerule.waterCauldronsBreakFall": "Should cauldrons filled with water break your fall",
+  "gamerule.entitiesAreWetInWaterCauldrons": "Should entities be \"wet\" in cauldrons of water",
+  "gamerule.cauldronsAllowNetherWater": "Should water be able to be placed in cauldrons in the Nether"
 }

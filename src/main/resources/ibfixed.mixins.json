@@ -4,7 +4,10 @@
   "package": "io.github.red050911.mod.itsbeenfixed.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinCactusBlock"
+    "MixinBlock",
+    "MixinCactusBlock",
+    "MixinCauldronBehavior",
+    "MixinEntity"
   ],
   "client": [
   ],
