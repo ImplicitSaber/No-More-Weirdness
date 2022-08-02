@@ -25,7 +25,7 @@ public interface MixinCauldronBehavior {
     @Inject(at = @At("RETURN"), method = "fillCauldron")
     private static void fillCauldron(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent soundEvent, CallbackInfoReturnable<ActionResult> cir) {
         if(!world.isClient) {
-            if(world.getDimension().ultrawarm() && state.getBlock().equals(Blocks.WATER_CAULDRON) && !world.getGameRules().getBoolean(ItsBeenFixed.CAULDRONS_ALLOW_NETHER_WATER)) {
+            if(world.getDimension().isUltrawarm() && state.getBlock().equals(Blocks.WATER_CAULDRON) && !world.getGameRules().getBoolean(ItsBeenFixed.CAULDRONS_ALLOW_NETHER_WATER)) {
                 world.setBlockState(pos, Blocks.CAULDRON.getDefaultState());
                 world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 int x = pos.getX();
