@@ -1,6 +1,6 @@
-package io.github.red050911.mod.itsbeenfixed.mixin;
+package io.github.implicitsaber.mod.nomoreweirdness.mixin;
 
-import io.github.red050911.mod.itsbeenfixed.ItsBeenFixed;
+import io.github.implicitsaber.mod.nomoreweirdness.NoMoreWeirdness;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeveledCauldronBlock;
@@ -19,12 +19,12 @@ public class MixinEntity {
     @Shadow
     private BlockPos blockPos;
     @Shadow
-    public World world;
+    private World world;
 
     @Inject(at = @At("HEAD"), method = "isWet", cancellable = true)
     public void isWet(CallbackInfoReturnable<Boolean> cir) {
         Block blockAtPos = world.getBlockState(blockPos).getBlock();
-        if(blockAtPos instanceof LeveledCauldronBlock && blockAtPos.equals(Blocks.WATER_CAULDRON) && world.getGameRules().getBoolean(ItsBeenFixed.ENTITIES_CONSIDERED_WET_IN_CAULDRONS)) {
+        if(blockAtPos instanceof LeveledCauldronBlock && blockAtPos.equals(Blocks.WATER_CAULDRON) && world.getGameRules().getBoolean(NoMoreWeirdness.ENTITIES_CONSIDERED_WET_IN_CAULDRONS)) {
             cir.setReturnValue(true);
         }
     }

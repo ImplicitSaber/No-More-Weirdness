@@ -1,4 +1,4 @@
-package io.github.red050911.mod.itsbeenfixed;
+package io.github.implicitsaber.mod.nomoreweirdness;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.CustomGameRuleCategory;

@@ -1,6 +1,6 @@
-package io.github.red050911.mod.itsbeenfixed.mixin;
+package io.github.implicitsaber.mod.nomoreweirdness.mixin;
 
-import io.github.red050911.mod.itsbeenfixed.ItsBeenFixed;
+import io.github.implicitsaber.mod.nomoreweirdness.NoMoreWeirdness;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.cauldron.CauldronBehavior;
@@ -25,7 +25,7 @@ public interface MixinCauldronBehavior {
     @Inject(at = @At("RETURN"), method = "fillCauldron")
     private static void fillCauldron(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent soundEvent, CallbackInfoReturnable<ActionResult> cir) {
         if(!world.isClient) {
-            if(world.getDimension().ultrawarm() && state.getBlock().equals(Blocks.WATER_CAULDRON) && !world.getGameRules().getBoolean(ItsBeenFixed.CAULDRONS_ALLOW_NETHER_WATER)) {
+            if(world.getDimension().ultrawarm() && state.getBlock().equals(Blocks.WATER_CAULDRON) && !world.getGameRules().getBoolean(NoMoreWeirdness.CAULDRONS_ALLOW_NETHER_WATER)) {
                 world.setBlockState(pos, Blocks.CAULDRON.getDefaultState());
                 world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 int x = pos.getX();

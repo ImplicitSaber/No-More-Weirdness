@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "ibfixed",
-  "version": "2.0.0",
-  "name": "It's Been Fixed",
-  "description": "A mod that does some simple fixes for weird mechanics in Minecraft",
+  "id": "no_more_weirdness",
+  "version": "${version}",
+  "name": "No More Weirdness",
+  "description": "A mod that fixes weird/inconsistent mechanics in Minecraft",
   "authors": [
-    "Red050911"
+    "ImplicitSaber"
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/ibfixed/icon.png",
+  "icon": "assets/no_more_weirdness/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.red050911.mod.itsbeenfixed.ItsBeenFixed"
+      "io.github.implicitsaber.mod.nomoreweirdness.NoMoreWeirdness"
     ]
   },
   "mixins": [
-    "ibfixed.mixins.json"
+    "no_more_weirdness.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.15.11",
     "fabric": "*",
-    "minecraft": "1.19.1"
+    "minecraft": "1.21"
   }
 }

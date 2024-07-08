@@ -1,7 +1,6 @@
 plugins {
-    id 'fabric-loom' version '0.11-SNAPSHOT'
+    id 'fabric-loom' version '1.7-SNAPSHOT'
     id 'maven-publish'
-    id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.mod_version
@@ -34,7 +33,7 @@ processResources {
     }
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly
@@ -78,38 +77,5 @@ publishing {
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
-    }
-}
-
-import com.modrinth.minotaur.dependencies.ModDependency;
-
-modrinth {
-    File file = new File(".modrinthapikey")
-    if(file.exists() && !file.isDirectory()) {
-        BufferedReader reader = new BufferedReader(new FileReader(file))
-        String modrinthAPIKey = reader.readLine()
-        reader.close()
-        token = modrinthAPIKey
-        projectId = "u4knTwbV"
-        BufferedReader scan = new BufferedReader(new InputStreamReader(System.in))
-        System.out.println("Enter the version number:")
-        versionNumber = scan.readLine()
-        System.out.println("Enter the version name:")
-        versionName = scan.readLine()
-        uploadFile = remapJar
-        System.out.println("Enter the game version number:")
-        gameVersions = [scan.readLine()]
-        System.out.println("Enter changelog (type END to stop):")
-        StringBuilder changelogDraft = new StringBuilder()
-        while(true) {
-            String obtained = scan.readLine()
-            if(obtained.equalsIgnoreCase("END")) {
-                break
-            } else {
-                changelogDraft.append(obtained).append("\n");
-            }
-        }
-        changelog = changelogDraft.toString()
-        loaders = ["fabric"]
     }
 }

@@ -1,6 +1,6 @@
-package io.github.red050911.mod.itsbeenfixed.mixin;
+package io.github.implicitsaber.mod.nomoreweirdness.mixin;
 
-import io.github.red050911.mod.itsbeenfixed.ItsBeenFixed;
+import io.github.implicitsaber.mod.nomoreweirdness.ItsBeenFixed;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;

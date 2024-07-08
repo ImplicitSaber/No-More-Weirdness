@@ -1,6 +1,6 @@
-package io.github.red050911.mod.itsbeenfixed.mixin;
+package io.github.implicitsaber.mod.nomoreweirdness.mixin;
 
-import io.github.red050911.mod.itsbeenfixed.ItsBeenFixed;
+import io.github.implicitsaber.mod.nomoreweirdness.NoMoreWeirdness;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
@@ -15,8 +15,9 @@ public class MixinBlock {
 
     @Inject(at = @At("HEAD"), method = "onLandedUpon", cancellable = true)
     public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance, CallbackInfo ci) {
-        if(state.getBlock() instanceof LeveledCauldronBlock && state.getBlock().equals(Blocks.WATER_CAULDRON) && world.getGameRules().getBoolean(ItsBeenFixed.WATER_CAULDRONS_BREAK_FALL)) {
+        if(state.getBlock() instanceof LeveledCauldronBlock && state.getBlock().equals(Blocks.WATER_CAULDRON) && world.getGameRules().getBoolean(NoMoreWeirdness.WATER_CAULDRONS_BREAK_FALL)) {
             ci.cancel();
         }
     }
+
 }

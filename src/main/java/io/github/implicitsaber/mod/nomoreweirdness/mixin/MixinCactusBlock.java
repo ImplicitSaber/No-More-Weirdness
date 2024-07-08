@@ -1,6 +1,6 @@
-package io.github.red050911.mod.itsbeenfixed.mixin;
+package io.github.implicitsaber.mod.nomoreweirdness.mixin;
 
-import io.github.red050911.mod.itsbeenfixed.ItsBeenFixed;
+import io.github.implicitsaber.mod.nomoreweirdness.NoMoreWeirdness;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CactusBlock;
 import net.minecraft.entity.Entity;
@@ -19,15 +19,15 @@ public class MixinCactusBlock {
 
     @Inject(method = "onEntityCollision", at = @At("HEAD"), cancellable = true)
     private void injectEntityCollisionHead(BlockState state, World world, BlockPos pos, Entity entity, CallbackInfo info) {
-        if(entity instanceof ItemEntity && !world.getGameRules().getBoolean(ItsBeenFixed.CACTI_BREAK_ITEMS_RULE)) {
+        if(entity instanceof ItemEntity && !world.getGameRules().getBoolean(NoMoreWeirdness.CACTI_BREAK_ITEMS_RULE)) {
             info.cancel();
             return;
         }
-        if(entity instanceof BoatEntity && !world.getGameRules().getBoolean(ItsBeenFixed.CACTI_BREAK_BOATS_RULE)) {
+        if(entity instanceof BoatEntity && !world.getGameRules().getBoolean(NoMoreWeirdness.CACTI_BREAK_BOATS_RULE)) {
             info.cancel();
             return;
         }
-        if(entity instanceof AbstractMinecartEntity && !world.getGameRules().getBoolean(ItsBeenFixed.CACTI_BREAK_MINECARTS_RULE)) {
+        if(entity instanceof AbstractMinecartEntity && !world.getGameRules().getBoolean(NoMoreWeirdness.CACTI_BREAK_MINECARTS_RULE)) {
             info.cancel();
         }
     }
