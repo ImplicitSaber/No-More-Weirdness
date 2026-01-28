@@ -1,3 +1,4 @@
+# THIS MOD WILL LIKELY NOT RECEIVE ANY FURTHER UPDATES
 # No More Weirdness
 No More Weirdness is a mod that simply adds some fixes for common things that seem broken in Minecraft. You may know the mod as its previous name, "It's Been Fixed".
 ### Current fixes
